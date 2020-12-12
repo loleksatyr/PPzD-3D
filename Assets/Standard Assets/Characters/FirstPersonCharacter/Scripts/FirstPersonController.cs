@@ -8,8 +8,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
-    public class FirstPersonController : MonoBehaviour
-    {
+    public class FirstPersonController : MonoBehaviour {
+        public static bool InputEnabled { get; set; } = true;
+
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
@@ -60,8 +61,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 
         // Update is called once per frame
-        private void Update()
-        {
+        private void Update() {
+            if (!InputEnabled)
+                return;
             RotateView();
             // the jump state needs to read here to make sure it is not missed
             if (!m_Jump)
@@ -93,8 +95,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
-        private void FixedUpdate()
-        {
+        private void FixedUpdate() {
+            if (!InputEnabled)
+                return;
             float speed;
             GetInput(out speed);
             // always move along the camera forward as it is the direction that it being aimed at
