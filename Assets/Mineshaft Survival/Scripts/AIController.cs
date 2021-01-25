@@ -26,7 +26,9 @@ public class AIController : MonoBehaviour {
     public GameObject Player;//Player
     Rigidbody rb; //Automaticly finds the rigidbody
     float distance; //distance float for distance calculations
-
+    [SerializeField] AudioSource rat;
+    [SerializeField] AudioClip attack;
+    [SerializeField] AudioClip die;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -43,7 +45,9 @@ public class AIController : MonoBehaviour {
         if(Health <= 0) //if healht is 0 or less it will die and change models rotation to -90
         {
             AIObj.transform.eulerAngles = new Vector3(-90, -90, 0);
+            rat.PlayOneShot(die, 1f);
             Die();
+         
         }
 
         distance = Vector3.Distance(gameObject.transform.position, Player.transform.position); //calulates the distance between player and the AI
@@ -86,6 +90,8 @@ public class AIController : MonoBehaviour {
         {
             Player.transform.GetComponent<LifeStats>().Health -= Damage; //deal damage to player
             StartCoroutine(Attack()); //start new attack
+            rat.PlayOneShot(attack, 1f);
+         
         }
         else
         {
@@ -105,6 +111,7 @@ public class AIController : MonoBehaviour {
     {
         rb.isKinematic = true; //set rigidbody to kinematic when dead
         thirdChar.enabled = false; //disable all scripts after death
+        rat.mute = true;
         Target.enabled = false; // ^
         this.enabled = false; // ^
     }

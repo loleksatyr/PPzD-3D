@@ -48,6 +48,9 @@ public class ObjectUsage : MonoBehaviour {
     [Header ("Other objects")]
     public Camera PlayerCam;
 
+    [SerializeField] AudioSource playerAudio;
+    [SerializeField] AudioClip pickaxestone;
+    [SerializeField] AudioClip pickaxeswing;
 
 
 
@@ -59,8 +62,7 @@ public class ObjectUsage : MonoBehaviour {
 
 
 
-
-	void Update ()
+    void Update ()
     {
         RaycastHit hit;
         Ray ray = PlayerCam.ScreenPointToRay(Input.mousePosition);
@@ -85,8 +87,9 @@ public class ObjectUsage : MonoBehaviour {
             if (inventory.selected == 2)
             {
 
-                punchAnim.SetTrigger("PunchPick");
 
+                punchAnim.SetTrigger("PunchPick");
+                playerAudio.PlayOneShot(pickaxeswing, 1f);
 
                 if (Physics.Raycast(ray, out hit, 4f))
                 {
@@ -95,9 +98,11 @@ public class ObjectUsage : MonoBehaviour {
                     Destroy(PickSpark, 3f);
                     if(hit.transform.tag == "Mineable")
                     {
+                       
                         Mineable mine = hit.transform.GetComponent<Mineable>();
-
+                       
                         mine.Health -= 50f;
+                        playerAudio.PlayOneShot(pickaxestone, 1f);
                         mine.MineRefresh();
                         mine.Save();
 
