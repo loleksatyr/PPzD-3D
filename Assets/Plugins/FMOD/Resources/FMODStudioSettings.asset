@@ -230,6 +230,7 @@ MonoBehaviour:
   - Doors
   - Inside
   - Outside
+  - Outside_dessert
   - Player
   BanksToLoad: []
   LiveUpdatePort: 9264

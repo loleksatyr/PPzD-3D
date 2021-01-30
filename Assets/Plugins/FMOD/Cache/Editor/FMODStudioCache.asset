@@ -1,5 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9165288757135169203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ambientdesert
+  m_EditorClassIdentifier: 
+  Path: event:/ambientdesert
+  guid: 86a6881cc2a5a54bac5868675f0bfdc9
+  Banks:
+  - {fileID: 4492342936446647963}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 2365
 --- !u!114 &-8223105876927245619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,7 +61,7 @@ MonoBehaviour:
   Path: FMOD_lab/Build/Desktop/Inside.bank
   Name: Inside
   StudioPath: bank:/Inside
-  lastModified: 637476198351184383
+  lastModified: 637476232690102158
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -57,7 +80,7 @@ MonoBehaviour:
   Path: FMOD_lab/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637476198348844476
+  lastModified: 637476232687212210
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -122,11 +145,11 @@ MonoBehaviour:
   Path: FMOD_lab/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637476198348984912
+  lastModified: 637476232687352151
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 1208
+    Value: 1422
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -147,6 +170,7 @@ MonoBehaviour:
   - {fileID: 1987176254493361168}
   - {fileID: 4782025109446611715}
   - {fileID: -7198145313521408035}
+  - {fileID: 4492342936446647963}
   EditorEvents:
   - {fileID: 4014167355405824506}
   - {fileID: 1176990339497223006}
@@ -154,13 +178,39 @@ MonoBehaviour:
   - {fileID: 4321364912771028361}
   - {fileID: -6092463735420359293}
   - {fileID: -6014689018447730295}
+  - {fileID: -9165288757135169203}
+  - {fileID: 1883781382691700119}
+  - {fileID: 777085912205185871}
   EditorParameters: []
   MasterBanks:
   - {fileID: -7134494526493275198}
   StringsBanks:
   - {fileID: -1164740459132955473}
-  stringsBankWriteTime: 637476198348984912
+  stringsBankWriteTime: 637476232687352151
   cacheVersion: 6
+--- !u!114 &777085912205185871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/gene
+  m_EditorClassIdentifier: 
+  Path: event:/gene
+  guid: 4c0962a14a5b1746a8a3a986719f80bb
+  Banks:
+  - {fileID: 1987176254493361168}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6829
 --- !u!114 &853158679514039016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,6 +279,29 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &1883781382691700119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/comp
+  m_EditorClassIdentifier: 
+  Path: event:/comp
+  guid: 716d6089b47bc14db209865d1456f3d2
+  Banks:
+  - {fileID: -7198145313521408035}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1521
 --- !u!114 &1987176254493361168
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +317,7 @@ MonoBehaviour:
   Path: FMOD_lab/Build/Desktop/Outside.bank
   Name: Outside
   StudioPath: bank:/Outside
-  lastModified: 637476198349894362
+  lastModified: 637476232688632143
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -294,6 +367,25 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3000
+--- !u!114 &4492342936446647963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Outside_dessert.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD_lab/Build/Desktop/Outside_dessert.bank
+  Name: Outside_dessert
+  StudioPath: bank:/Outside_dessert
+  lastModified: 637476232690732157
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &4782025109446611715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +401,7 @@ MonoBehaviour:
   Path: FMOD_lab/Build/Desktop/Player.bank
   Name: Player
   StudioPath: bank:/Player
-  lastModified: 637476198350334407
+  lastModified: 637476232689272153
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -351,7 +443,7 @@ MonoBehaviour:
   Path: FMOD_lab/Build/Desktop/Doors.bank
   Name: Doors
   StudioPath: bank:/Doors
-  lastModified: 637476198348624483
+  lastModified: 637476232687012137
   LoadResult: 0
   FileSizes: []
   Exists: 1
